@@ -4,9 +4,20 @@ import SearchIcon from "@material-ui/icons/Search";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 import { Link } from "react-router-dom";
 import { useStateValue } from "./StateProvider";
+import { auth } from "./firebase";
 
 function Header() {
-	const [{ basket }, pushtodatalayerfn] = useStateValue();
+	const [{ basket, user }, pushtodatalayerfn] = useStateValue();
+	const handlesignin = () => {
+		if (user) {
+			console.log("User is signed-outttt");
+			auth.signOut();
+			// pushtodatalayerfn({
+			// 	type: "SET_USER",
+			// 	user: null,
+			// });  // this is already done in useState-listener-fn
+		}
+	};
 	return (
 		<div className="header">
 			{/* <img src="chitvantrendz\images\chitvan_logo-modified.png"></img> */}
@@ -24,9 +35,12 @@ function Header() {
 			<div className="header_nav">
 				<div className="header_nav_option">
 					<span className="header_nav_option_lineone">hello guest</span>
-					<Link to="/login">
-						<span className="header_nav_option_linetwo">sign in</span>
+					<Link to={!user && "/login"}>
+						<span className="header_nav_option_linetwo">
+							{user ? "sign out" : "sign in"}
+						</span>
 					</Link>
+					<button onClick={handlesignin}></button>
 				</div>
 				<div className="header_nav_option">
 					<span className="header_nav_option_lineone">Returns</span>
