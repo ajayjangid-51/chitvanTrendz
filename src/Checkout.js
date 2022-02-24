@@ -15,6 +15,7 @@ function Checkout() {
 					src={require("./images/Screenshot (160).png")}
 				></img>
 				<div>
+					{/* <h3>{user}</h3> */}
 					<h2 className="checkout_left_title">Your Shopping List</h2>
 					{basket.map((i) => (
 						<CheckoutProduct

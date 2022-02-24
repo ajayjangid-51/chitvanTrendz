@@ -25,7 +25,7 @@ function Product({ id, title, image, rating, price }) {
 	};
 	return (
 		// <Link className="product" to="/productdetail">
-		<div>
+		<div className="product">
 			<div className="product_image">
 				{/* <img alt="img" src={require("./images/Screenshot (154).png")}></img> */}
 				<img alt="img" src={require("" + image)}></img>
@@ -35,6 +35,7 @@ function Product({ id, title, image, rating, price }) {
 					<strong>{title}</strong>
 					<p>🔺Style - Nike Shoes</p>
 				</p>
+
 				<div className="product_info_rating">
 					{Array(rating)
 						.fill()

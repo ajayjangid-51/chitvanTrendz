@@ -7,6 +7,12 @@ import Login from "./Login";
 import React, { useEffect } from "react";
 import { auth } from "./firebase";
 import { useStateValue } from "./StateProvider";
+import ProductView from "./ProductView";
+import Header2 from "./Header2";
+import JobForm from "./JobForm";
+import Shopping from "./Shopping";
+import Footer from "./Footer";
+import Addproduct from "./Addproduct";
 
 function App() {
 	const [{ user }, gunfordatalayer] = useStateValue();
@@ -42,6 +48,14 @@ function App() {
 						}
 					></Route>
 					<Route
+						path="/productview"
+						element={
+							<div>
+								<ProductView />
+							</div>
+						}
+					></Route>
+					<Route
 						path="/checkout"
 						element={
 							<div>
@@ -61,11 +75,40 @@ function App() {
 						}
 					></Route>
 					<Route
+						path="/shopping"
+						element={
+							<div>
+								<Shopping />
+							</div>
+						}
+					></Route>
+					<Route
+						path="/job"
+						element={
+							<div>
+								<h1>hey i am JOB</h1>
+								<JobForm />
+							</div>
+						}
+					></Route>
+					<Route
+						path="/addproduct7725"
+						element={
+							<div>
+								<h1>Add new Product...</h1>
+								<Addproduct />
+							</div>
+						}
+					></Route>
+					<Route
 						path="/"
 						element={
 							<div>
 								<Header />
+								<Header2 />
+
 								<Home />
+								<Footer />
 							</div>
 						}
 					></Route>

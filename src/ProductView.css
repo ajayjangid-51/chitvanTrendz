@@ -1,0 +1,27 @@
+a:link {
+	color: green;
+	/* cursor: progress; */
+	/* cursor: wait; */
+	/* cursor: help; */
+	/* cursor: crosshair; */
+}
+a:visited {
+	/* color: (internal value); */
+	border: 2px solid rgb(206, 24, 166);
+	/* text-decoration: underline; */
+	/* cursor: auto; */
+	/* cursor: pointer; */
+}
+
+a:hover {
+	color: burlywood;
+}
+a:link:active {
+	color: red;
+}
+.productview_imageview {
+	border: 2px solid blue;
+}
+.arena {
+	/* border: 2px solid red; */
+}
